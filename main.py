@@ -20,7 +20,7 @@ def create_connection(db_file):
 
 
 if __name__ == '__main__':
-    create_connection(r"C:\users\public\qlitedata")
+    create_connection(r"\data\sqldata")
 
 from typing import Optional
 
@@ -73,5 +73,35 @@ if True:
       print ("Head coder: Harry Hayward-Evans")
       print ("Coding team: Insert names here")
       print ("Bug checker: Harry and Insert name here")
+    elif ans=="2009":
+      print ('admin mode selected please choose option')
+      ans=True
+      while ans:
+        print ("""
+        1. Danger Zone
+        2. Delete a user
+        3. add a user
+        4. open sqlite file
+        5. debug mode
+        6. go back
+        
+        """)
+        ans=input("What would you like to do? ") 
+        if ans=="1":
+            print ("!Danger zone!")
+        elif ans=="2":
+            print ('delete user selected')
+
+        elif ans=="3":
+            print ('add user selected')
+
+
+        elif ans=="4":
+            print ('opening SQLite files')
+
+
+            
+
+
     elif ans !="":
       print("\n Not Valid Choice Try again")
