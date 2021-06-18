@@ -44,12 +44,14 @@ if True:
     1.Add a Entry
     2.Delete an Entry
     3.Find Entry
-    4.Exit/Quit
-    5.Version and authers info
+    4.Save changes and exit
+    5.Save changes and continue
+    6.Version and authers info
     """)
     ans=input("What would you like to do? ") 
     if ans=="1":
-      entry = input ('entry= ') 
+      entry = input ('Entry Number? ') 
+      addtosql = input ('Entry?')
       print("\n Entry Added") 
     elif ans=="2":
       print("\n Entry Deleted") 
@@ -59,9 +61,13 @@ if True:
 
 
     elif ans=="4":
-      print("\n Goodbye") 
-      quit
+      print("\n Saving Changes") 
+      print ("Goodbye")
+      exit()
     elif ans=="5":
+      print("\n Saving changes") 
+      
+    elif ans=="6":
       print("\n Version: 0.2") 
       print ("Made possible by Spectrum Gaming community")
       print ("Head coder: Harry Hayward-Evans")
