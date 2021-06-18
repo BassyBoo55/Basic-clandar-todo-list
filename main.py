@@ -6,21 +6,15 @@ from sqlite3 import Error
 from sqlite3.dbapi2 import version
 
 
-def create_connection(db_file):
-    """ create a database connection to a SQLite database """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()
+import sqlite3
 
+con = sqlite3.connect('games.db')
+cur = con.cursor()
 
-if __name__ == '__main__':
-    create_connection(r"c:\users\public\sqlite")
+# Create table
+cur.execute('''CREATE TABLE users
+               (name text, rank int)''')
+
 
 from typing import Optional
 
