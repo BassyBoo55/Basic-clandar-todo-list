@@ -1,3 +1,6 @@
+
+
+
 import sqlite3
 from sqlite3 import Error
 from sqlite3.dbapi2 import version
@@ -22,10 +25,21 @@ if __name__ == '__main__':
 from typing import Optional
 
 
-user1 = input ('Enter your name: ')
-print ('welcome',user1)
-ans=True
-while ans:
+print ('gui?')
+def yes_or_no(question):
+    while "the answer is invalid":
+        reply = str(input(question+' (y/n): ')).lower().strip()
+        if reply[0] == 'y':
+            return True
+        if reply[0] == 'n':
+            return False
+
+if True:
+
+  user1 = input ('Enter your name: ')
+  print ('welcome',user1)
+  ans=True
+  while ans:
     print ("""
     1.Add a Entry
     2.Delete an Entry
@@ -51,7 +65,7 @@ while ans:
       print("\n Version: 0.2") 
       print ("Made possible by Spectrum Gaming community")
       print ("Head coder: Harry Hayward-Evans")
-      print ("Coding team: ")
-      print ("Bug checker: Harry and ")
+      print ("Coding team: Insert names here")
+      print ("Bug checker: Harry and Insert name here")
     elif ans !="":
       print("\n Not Valid Choice Try again")
