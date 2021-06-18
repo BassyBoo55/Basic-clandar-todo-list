@@ -1,3 +1,24 @@
+import sqlite3
+from sqlite3 import Error
+from sqlite3.dbapi2 import version
+
+
+def create_connection(db_file):
+    """ create a database connection to a SQLite database """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        print(sqlite3.version)
+    except Error as e:
+        print(e)
+    finally:
+        if conn:
+            conn.close()
+
+
+if __name__ == '__main__':
+    create_connection(r"C:\users\public\qlitedata")
+
 from typing import Optional
 
 
@@ -10,6 +31,7 @@ while ans:
     2.Delete an Entry
     3.Find Entry
     4.Exit/Quit
+    5.Version and authers info
     """)
     ans=input("What would you like to do? ") 
     if ans=="1":
@@ -20,11 +42,16 @@ while ans:
     elif ans=="3":
       entryinfo=input ('entry number?: ')
       print("\n Entry Record Found") 
-      z=entryinfo
-      print (z)
+
 
     elif ans=="4":
       print("\n Goodbye") 
       quit
+    elif ans=="5":
+      print("\n Version: 0.2") 
+      print ("Made possible by Spectrum Gaming community")
+      print ("Head coder: Harry Hayward-Evans")
+      print ("Coding team: ")
+      print ("Bug checker: Harry and ")
     elif ans !="":
       print("\n Not Valid Choice Try again")
