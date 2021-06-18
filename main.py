@@ -20,7 +20,7 @@ def create_connection(db_file):
 
 
 if __name__ == '__main__':
-    create_connection(r"\data\sqldata")
+    create_connection(r"c:\users\public\sqlite")
 
 from typing import Optional
 
