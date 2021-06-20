@@ -1,10 +1,11 @@
 to run full app please open the GUI.py
 to run ONLY the terminal version please run main.py
-caution this app is in VERY VERY VERY EARLY dev stage
+caution this app is in alpha
+most features do not work yet
 
 
 
-Version: 0.01
+Version: 0.3
 
 Credits:
 Spectrum gaming
