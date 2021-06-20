@@ -7,12 +7,9 @@ from sqlite3.dbapi2 import version
 
 import sqlite3
 
-con = sqlite3.connect('games.db')
+con = sqlite3.connect('users.db')
 cur = con.cursor()
 
-# Create table
-cur.execute('''CREATE TABLE Users
-               (name text, rank int)''')
 
 
 from typing import Optional
@@ -29,10 +26,14 @@ def yes_or_no(question):
 
 if True:
 
-  user1 = input ('Enter your name: ')
-  print ('welcome',user1)
-  ans=True
-  while ans:
+ usertemp = input ('Enter your name: ')
+ if usertemp == 'temp':
+   print ('caution loading temp user')
+   print ('!all changes will not be saved!')
+
+ print ('welcome',usertemp)
+ ans=True
+ while ans:
     print ("""
     1.Add a Entry
     2.Delete an Entry
@@ -40,6 +41,7 @@ if True:
     4.Save changes and exit
     5.Save changes and continue
     6.Version and authers info
+    7. Add user
     """)
     ans=input("What would you like to do? ") 
     if ans=="1":
@@ -66,6 +68,8 @@ if True:
       print ("Head coder: Harry Hayward-Evans")
       print ("Coding team: Insert names here")
       print ("Bug checker: Harry and Insert name here")
+    elif ans=="7":
+      adduser = input ('User name?  : ')
     elif ans=="2009":
       print ('admin mode selected please choose option')
       ans=True
