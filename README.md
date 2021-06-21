@@ -5,7 +5,7 @@ most features do not work yet
 
 
 
-Version: 0.3
+Version: 0.9
 
 Credits:
 Spectrum gaming
