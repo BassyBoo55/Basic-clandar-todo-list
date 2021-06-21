@@ -1,7 +1,9 @@
 
 
 
+
 import sqlite3 as sql
+
 
 
 username = input ('username: ' )
@@ -25,8 +27,17 @@ else:
     """)
     ans=input("What would you like to do? ") 
     if ans=="1":
-      entry = input ('Entry Number? ') 
-      addtosql = input ('Entry?')
+      addtosql = input ('Entry? ')
+      rank = input ('importance? ')
+      import sqlite3
+
+      from model.data import data
+
+      con = sqlite3.connect('data.db')
+      cursor = con.cursor()
+
+      add = data(addtosql, rank)
+      add.save(cursor)
       print("\n Entry Added") 
     elif ans=="2":
       print("\n Entry Deleted") 
