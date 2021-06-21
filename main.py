@@ -1,39 +1,23 @@
 
 
 
-import sqlite3
-from sqlite3 import Error
-from sqlite3.dbapi2 import version
+import sqlite3 as sql
 
-import sqlite3
 
-con = sqlite3.connect('users.db')
+username = "boss"
+password = "1234"
+con = sql.connect("data.db")
 cur = con.cursor()
+statement = f"SELECT username from users WHERE username='{username}' AND Password = '{password}';"
+cur.execute(statement)
+if not cur.fetchone():  # An empty result evaluates to False.
+    print("Login failed")
+else:
+    print("Welcome")
 
 
-
-from typing import Optional
-
-
-print ('gui?')
-def yes_or_no(question):
-    while "the answer is invalid":
-        reply = str(input(question+' (y/n): ')).lower().strip()
-        if reply[0] == 'y':
-            return True
-        if reply[0] == 'n':
-            return False
-
-if True:
-
- usertemp = input ('Enter your name: ')
- if usertemp == 'temp':
-   print ('caution loading temp user')
-   print ('!all changes will not be saved!')
-
- print ('welcome',usertemp)
- ans=True
- while ans:
+ans=True
+while ans:
     print ("""
     1.Add a Entry
     2.Delete an Entry
@@ -56,11 +40,13 @@ if True:
 
 
     elif ans=="4":
-      print("\n Saving Changes") 
+      print("\n Saving Changes")
+      con.commit() 
       print ("Goodbye")
       exit()
     elif ans=="5":
       print("\n Saving changes") 
+      con.commit()
       
     elif ans=="6":
       print("\n Version: 0.2") 
