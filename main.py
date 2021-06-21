@@ -4,9 +4,9 @@
 import sqlite3 as sql
 
 
-username = "boss"
-password = "1234"
-con = sql.connect("data.db")
+username = input ('username: ' )
+password = input ('password: ' )
+con = sql.connect("users.db")
 cur = con.cursor()
 statement = f"SELECT username from users WHERE username='{username}' AND Password = '{password}';"
 cur.execute(statement)
@@ -14,10 +14,6 @@ if not cur.fetchone():  # An empty result evaluates to False.
     print("Login failed")
 else:
     print("Welcome")
-
-
-ans=True
-while ans:
     print ("""
     1.Add a Entry
     2.Delete an Entry
@@ -88,3 +84,6 @@ while ans:
 
     elif ans !="":
       print("\n Not Valid Choice Try again")
+
+
+
