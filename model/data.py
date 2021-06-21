@@ -4,4 +4,4 @@ class data:
         self.importance = importance
 
     def save(self, cursor):
-        cursor.execute(f'INSERT INTO games (name, importance) VALUES ("{self.name}",{self.rank})')
+        cursor.execute(f'INSERT INTO data (name, importance) VALUES ("{self.name}",{self.rank})')

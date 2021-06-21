@@ -8,7 +8,7 @@ import sqlite3 as sql
 
 username = input ('username: ' )
 password = input ('password: ' )
-con = sql.connect("users.db")
+con = sql.connect("databases/users.db")
 cur = con.cursor()
 statement = f"SELECT username from users WHERE username='{username}' AND Password = '{password}';"
 cur.execute(statement)
@@ -33,7 +33,7 @@ else:
 
       from model.data import data
 
-      con = sqlite3.connect('data.db')
+      con = sqlite3.connect('databases/data.db')
       cursor = con.cursor()
 
       add = data(addtosql, rank)
