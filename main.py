@@ -14,6 +14,7 @@ statement = f"SELECT username from users WHERE username='{username}' AND Passwor
 cur.execute(statement)
 if not cur.fetchone():  # An empty result evaluates to False.
     print("Login failed")
+    print ("Please contact network admin for login details")
 else:
     print("Welcome")
     print ("""
